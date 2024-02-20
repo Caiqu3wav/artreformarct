@@ -18,16 +18,16 @@ export default function Hero() {
                 <h1 className="text-black text-3xl">Que tipo de reforma você procura?</h1>
                 <hr className=" border-solid border-y-4 border-black w-full" />
                 <div className="flex w-full justify-evenly mt-4">
-                    <div className="flex flex-col items-center justify-center text-center">
-                    <Image src={HeroImage1} alt="pedreiro" className="w-[170px] shadow-md shadow-black"/>
+                    <div className="flex flex-col items-center justify-center text-center midtw1:w-[30%]">
+                    <Image src={HeroImage1} alt="pedreiro" className="w-[170px] shadow-md shadow-black midtw1:w-[100%]"/>
                     <p className="text-black font-bold">Reformas</p>
                     </div>
-                    <div className="flex flex-col items-center justify-center text-center">
-                    <Image src={HeroImage2} alt="acabamento" className="w-[170px] shadow-md shadow-black"/>
+                    <div className="flex flex-col items-center justify-center text-center midtw1:w-[30%]">
+                    <Image src={HeroImage2} alt="acabamento" className="w-[170px] shadow-md shadow-black midtw1:w-[100%]"/>
                     <p className="text-black font-bold">Acabamento</p>
                     </div>
-                    <div className="flex flex-col items-center justify-center text-center">
-                    <Image src={HeroImage3} alt="planta de casa" className="w-[170px] shadow-md shadow-black"/>
+                    <div className="flex flex-col items-center justify-center text-center midtw1:w-[30%]">
+                    <Image src={HeroImage3} alt="planta de casa" className="w-[170px] shadow-md shadow-black midtw1:w-[100%]"/>
                     <p className="text-black font-bold">Projetos</p>
                     </div>
                 </div>

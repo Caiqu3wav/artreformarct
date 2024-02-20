@@ -4,9 +4,9 @@ import "./About.css"
 
 export default function About() {
     return(
-        <div className="about-cont gap-3 flex w-full flex-col items-center justify-center">
+        <div id="sobre" className="about-cont gap-3 flex w-full flex-col items-center justify-center">
             <h1 className="text-4xl font-semibold text-black">QUEM SOMOS?</h1>
-            <Image src={ArtRefLogo} alt="lo0go da empresa" className="w-[540px] rounded-md"/>
+            <Image src={ArtRefLogo} alt="lo0go da empresa" className="w-[540px] rounded-md midtw1:w-[480px] midtwo3:w-[70%]"/>
             <p className="text-black text-2xl flex flex-col gap-0 font-semibold"><span className="text-3xl">SOMOS UMA EMPRESA ESPECIALIZADA EM:</span>
 <span className="text-center self-center">PIAS/LAVATÓRIOS <br />
 NICHOS <br />
