@@ -21,22 +21,22 @@ const Carousel = () => {
     };
     
     return(
-        <div className="carousel-container">
+        <div className="carousel-container pb-[30px]">
         <Slider {...settings}>
             <div className="imgs-cont flex items-center justify-center">
-            <Image src={ImageReforma1} alt="" className="w-[50%]" />
+            <Image src={ImageReforma1} alt="" className="w-[90%]" />
             </div>
             <div className="imgs-cont flex items-center justify-center">
-                <Image src={ImageReforma2} alt="" className="w-[50%]" />
+                <Image src={ImageReforma2} alt="" className="w-[90%]" />
             </div>
             <div className="imgs-cont flex items-center justify-center">
-                <Image src={ImageReforma3} alt="" className="w-[50%]" />
+                <Image src={ImageReforma3} alt="" className="w-[90%]" />
             </div>
             <div className="imgs-cont flex items-center justify-center">
-                <Image src={ImageReforma4} alt="" className="w-[50%]" />
+                <Image src={ImageReforma4} alt="" className="w-[90%]" />
             </div>
             <div className="imgs-cont flex items-center justify-center">
-                <Image src={ImageReforma5} alt="" className="w-[50%]" />
+                <Image src={ImageReforma5} alt="" className="w-[90%]" />
             </div>
         </Slider>
         </div>

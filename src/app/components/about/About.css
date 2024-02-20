@@ -1,0 +1,11 @@
+.about-cont>h1{
+    border-bottom: 4px solid gray;
+    border-radius: 5px;
+}
+
+.about-cont{
+    background-image: url(../../../../public/assets/img/estampa-papel-de-parede-textura-branca-marmore.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

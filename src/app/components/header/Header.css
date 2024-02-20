@@ -1,2 +1,42 @@
 .header{
-background-color: rgba(0, 0, 0, 0.082);}
+background-color: rgba(0, 0, 0, 0.082);
+z-index: 900;
+}
+
+.nav_list{
+    display: flex;
+    list-style: none;
+    transition: 0.8s;
+}
+
+.nav_items{
+    padding: 6px;
+    margin-right: 30px;
+    background-color: rgb(238, 238, 238);
+    border-radius: 5px;
+    transition: background-color 0.8s ease;
+}
+ 
+nav ul li a{
+   text-decoration: none;
+    color: black;
+    transition: 1s;
+}
+nav ul li a:hover{
+    text-decoration: none;
+     color: rgb(56, 127, 219);
+ }
+
+nav ul li:hover{
+   
+    border-bottom: black solid 5px;
+    
+}
+.nav_list li:hover{
+    text-decoration: none;
+    background-color: orange;
+ }
+
+ .nav_items:hover{
+    background-color: rgb(253, 236, 213);
+ }

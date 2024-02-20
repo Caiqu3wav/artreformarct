@@ -5,7 +5,7 @@ import "./Header.css"
 
 export default function Header(){
     return(
-        <header className="header flex items-center w-full h-[130px]">
+        <header className="header flex items-center fixed w-full h-[130px]">
         <Image src={ArtRLogo} alt="logo art & reforma" className="w-[160px]"/>
         <Navbar/>
         </header>
