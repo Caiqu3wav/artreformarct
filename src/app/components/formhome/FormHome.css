@@ -1,0 +1,10 @@
+.form-container{
+    button{
+        transition: all 1s;
+    }
+
+    button:hover{
+        background-color: rgb(159, 159, 255);
+        color: rgb(243, 212, 173);
+    }
+}

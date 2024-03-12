@@ -1,0 +1,59 @@
+.form-orcamento label input{
+    background-color: rgb(209, 171, 120);
+    border-radius: 15px;
+    padding-left: 3px;
+    margin-left: 3px;
+}
+
+.form-orcamento label select{
+    background-color: rgb(209, 171, 120);
+    border-radius: 15px;
+    margin-left: 3px;
+}
+
+
+.form-orcamento label select option{
+    background-color: aliceblue;
+    border-radius: 15px;
+    margin-left: 3px;
+} 
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Espaçamento entre as opções */
+  
+    /* Estilizando o checkbox */
+    input[type="checkbox"] {
+      margin-right: 5px; /* Espaçamento entre o checkbox e o texto */
+    }
+  
+    /* Estilizando a seta do checkbox */
+    input[type="checkbox"]::after {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border: 2px solid #000; /* Cor da seta do checkbox */
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      margin-left: 3px; /* Ajuste de posição da seta */
+    }
+  
+    /* Estilizando o hover */
+    &:hover {
+      cursor: pointer;
+    }
+  
+    /* Estilizando o foco */
+    &:focus-within {
+      outline: none; /* Remover a borda de foco ao redor de toda a opção */
+    }
+  
+    /* Estilizando o foco no checkbox */
+    input[type="checkbox"]:focus + span {
+      /* Adicione estilos de destaque aqui, como uma borda */
+      border: 1px solid blue;
+    }
+  }

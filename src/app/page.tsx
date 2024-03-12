@@ -6,6 +6,7 @@ import About from "./components/about/About"
 import SectionReformas from "./components/SectionReformas/SectionReformas"
 import WhatsButton from "./components/WhatsButton"
 import Footer from "./components/footer/Footer"
+import FormHome from "./components/formhome/FormHome"
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero/>
       <About/>
       <SectionReformas/>
+        <FormHome/>
       <Footer/>
       <WhatsButton/>
       </div>

@@ -55,7 +55,7 @@ novas. Confira!...</p>
                 </div>
                 <div className="flex flex-col w-[270px] majorthree:w-[30%]">
                 <Image src={Amostra5} className="w-[270px] h-[220px] majorthree:w-[100%] majorthree:h-auto" alt="amostra de reforma"/>
-                <h1 className="font-bold text-black text-xl">Pisos e Revestimentos</h1>
+                <h1 className="font-bold text-black text-xl midfour:text-lg low:text-base">Pisos e Revestimentos</h1>
                 <p className="text-black">Instalação e Assentamento de
 Pisos e Revestimentos.
 Porcelanato, Madeira carpete...
