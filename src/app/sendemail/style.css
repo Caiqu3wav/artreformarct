@@ -2,6 +2,7 @@
     background-color: rgb(209, 171, 120);
     border-radius: 15px;
     padding-left: 3px;
+    color: black;
     margin-left: 3px;
 }
 
@@ -9,6 +10,7 @@
     background-color: rgb(209, 171, 120);
     border-radius: 15px;
     margin-left: 3px;
+    color: black;
 }
 
 
@@ -16,7 +18,15 @@
     background-color: aliceblue;
     border-radius: 15px;
     margin-left: 3px;
+    color: black;
 } 
+
+@media screen and (max-width: 1012px) {
+    .form-orcamento label{
+      display: flex;
+      flex-direction: column;
+    }
+}
 
 .checkbox-option {
     display: flex;

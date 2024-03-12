@@ -14,7 +14,7 @@ export default function SendEmail() {
     cep: '',
     numeroComplemento: '',
     precisaDe: '',
-    servicoPara: [],
+    servicoPara: '',
     local: '',
     situacaoLocal: '',
     inicioServico: '',
@@ -48,7 +48,7 @@ export default function SendEmail() {
             e.preventDefault();
 
             try {
-                await axios.post('/api/enviar-email', dadosFormulario);
+                await axios.post('http://localhost:5000/api/sendemail', dadosFormulario);
 
                 console.log("E-mail enviado com sucesso");
             } catch (error) {
@@ -60,49 +60,44 @@ export default function SendEmail() {
         <div className="hero">
             <Header/>
             <div className="w-full flex items-center justify-center pb-4 min-h-[100vh] ">
-                <div className="flex flex-col mt-[190px] bg-gray-500 bg-opacity-55 rounded-xl w-[70%]">
-                    <form onSubmit={handleSubmit} className="form-orcamento flex flex-col py-3 gap-3 items-center justify-center">
+                <div className="flex flex-col mt-[190px] bg-gray-500 bg-opacity-55 rounded-xl w-[70%] majorfour:w-[85%]">
+                    <form onSubmit={handleSubmit} className="form-orcamento flex flex-col py-3 gap-3 text-2xl items-center justify-center
+                     midfour:text-lg">
                         <label>
                             Nome:
-                            <input type="text" name="nome" value={dadosFormulario.nome} onChange={handleChange} />
+                            <input type="text" name="nome" required value={dadosFormulario.nome} onChange={handleChange} />
                         </label>
                         <label>
                             Email:
-                            <input type="email" name="email" value={dadosFormulario.email} onChange={handleChange} />
+                            <input type="email" name="email" required value={dadosFormulario.email} onChange={handleChange} />
                         </label>
                         <label>
                             Celular (DDD+Número):
-                            <input type="tel" name="numeroCelular" value={dadosFormulario.numeroCelular} onChange={handleChange} />
+                            <input type="tel" name="numeroCelular" required value={dadosFormulario.numeroCelular} onChange={handleChange} />
                         </label>
                         <label>
-                            CEP (local do serviço)
+                            CEP (local do serviço):
                             <input type="text" name="cep" value={dadosFormulario.cep} onChange={handleChange} />
                         </label>
                         <label>
-                            Número e complemento do local
+                            Número e complemento do local:
                             <input type="text" name="numeroComplemento" value={dadosFormulario.numeroComplemento} onChange={handleChange} />
                         </label>           
                         <label>
                         Precisa de:
-                        <select name="precisaDe" value={dadosFormulario.precisaDe} onChange={handleChange}>
+                        <select name="precisaDe" required value={dadosFormulario.precisaDe} onChange={handleChange}>
                         <option value="reforma">Reforma</option>
                         <option value="manutencao">Manutenção</option>
                         </select>
                     </label>
                     <label>
-  Serviço para (múltipla escolha):
-  {['apartamento', 'casa', 'comercial', 'condominio'].map((option) => (
-    <div key={option}>
-      <input
-        type="checkbox"
-        name="servicoPara"
-        value={option}
-        checked={dadosFormulario.servicoPara.includes(option)}
-        onChange={handleChange}
-      />
-      <span>{option}</span>
-    </div>
-  ))}
+  Serviço para:
+  <select name="servicoPara" id="">
+    <option value="apartamento">Apartamento</option>
+    <option value="casa">Casa</option>
+    <option value="comercio">Comércio</option>
+    <option value="condominio">Condomínio</option>
+  </select>
 </label>
       <label>
   Ambientes Trabalhados (múltipla escolha):
@@ -121,7 +116,7 @@ export default function SendEmail() {
 </label>
         <label>
         O local é:
-        <select name="" value={dadosFormulario.situacaoLocal}
+        <select name="situacaoLocal" value={dadosFormulario.situacaoLocal}
           onChange={handleChange}>
         <option value="usado">Usado</option>
           <option value="casa">Novo</option>
@@ -130,7 +125,7 @@ export default function SendEmail() {
                 </label>
                 <label>
         Qual a situação do local?:
-        <select name="" value={dadosFormulario.local}
+        <select name="local" value={dadosFormulario.local}
           onChange={handleChange}>
         <option value="habitado">Habitado/em funcionamento</option>
           <option value="vazio">Vazio</option>
@@ -138,9 +133,9 @@ export default function SendEmail() {
           </select>
                 </label>
                 <label>
-        Serviço para:
+        Metragem total:
         <select
-          name="servicoPara"
+          name="metragemTotal"
           value={dadosFormulario.metragemTotal}
           onChange={handleChange}
         >
@@ -165,7 +160,7 @@ export default function SendEmail() {
           </select>
                 </label>
       <label>
-        O local é:
+        Tem projeto?:
         <select name="temProjeto" value={dadosFormulario.temProjeto} onChange={handleChange}>
 
         <option value="sim">Sim</option>
@@ -178,8 +173,8 @@ export default function SendEmail() {
                 Serviços Necessários:
                 {['Pintura', 'Marcenaria', 'Mármores', 'Pisos e revestimento'].map((option) => (
           <div key={option}>
-          <input type="checkbox" name="servicopara" value={option}
-          checked={dadosFormulario.servicoPara.includes(option)}
+          <input type="checkbox" name="servicosNecessarios" value={option}
+          checked={dadosFormulario.servicosNecessarios.includes(option)}
           onChange={handleChange} id="" />
           <span>{option}</span>
           </div>
