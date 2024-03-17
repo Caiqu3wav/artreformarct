@@ -1,15 +1,17 @@
-import { config as dotenvConfig } from 'dotenv';
-dotenvConfig();
-import express from 'express';
-import nodemailer from 'nodemailer';
-import cors from 'cors';
+const express = require('express');
+const nodemailer = require('nodemailer');
+const cors = require('cors');
+require("dotenv").config()
+
+mail = process.env.MAIL_ADD;
+ mailpass = process.env.MAIL_PASS;
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.post('/api/sendemail', async (req, res) => {
+app.post('/api/sender', async (req, res) => {
     const { nome,
         email,
         numeroCelular,
@@ -27,15 +29,15 @@ app.post('/api/sendemail', async (req, res) => {
         mensagem } = req.body;
 
         const transporter = nodemailer.createTransport({
-            service: 'Gmail', // Por exemplo, 'gmail', 'hotmail', etc.
+            service: 'gmail',
             auth: {
-                user: 'process.env.EMAILSENDER',
-                pass: 'process.env.PASSEMAILSENDER'
+                user: mail,
+                pass: mailpass
             }
         });
     
         const mailOptions = {
-            from: 'process.env.EMAILSENDER',
+            from: mail,
             to: 'prodfsho777@gmail.com',
             subject: 'Orçamento de reforma pedido pelo site',
             text: `

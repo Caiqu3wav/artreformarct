@@ -4,6 +4,7 @@ import Footer from "../components/footer/Footer"
 import "../page.css"
 import axios from "axios"
 import { useState } from "react"
+import { FaCheckCircle } from "react-icons/fa";
 import "./style.css"
 
 export default function SendEmail() {
@@ -24,6 +25,10 @@ export default function SendEmail() {
     ambientesTrabalhados: [],
     mensagem: '',
         });
+
+        const [loading, setLoading] = useState(false);
+        const [sucess, setSucess] = useState(false);
+        const [error, setError] = useState(null);
 
         const handleChange = (e) => {
             const { name, value, type, checked } = e.target;
@@ -47,19 +52,25 @@ export default function SendEmail() {
         const handleSubmit = async (e) => {
             e.preventDefault();
 
-            try {
-                await axios.post('http://localhost:5000/api/sendemail', dadosFormulario);
+            setLoading(true);
 
+            try {
+                await axios.post('http://localhost:5000/api/sender', dadosFormulario);
+                setSucess(true);
                 console.log("E-mail enviado com sucesso");
             } catch (error) {
                 console.error('Erro ao enviar e-mail', error);
+                setError("Erro ao enviar e-mail. Por favor, tente novamente mais tarde.");
             }
+
+            setLoading(false);
         };
 
     return(
         <div className="hero">
             <Header/>
             <div className="w-full flex items-center justify-center pb-4 min-h-[100vh] ">
+                {!sucess ? (
                 <div className="flex flex-col mt-[190px] bg-gray-500 bg-opacity-55 rounded-xl w-[70%] majorfour:w-[85%]">
                     <form onSubmit={handleSubmit} className="form-orcamento flex flex-col py-3 gap-3 text-2xl items-center justify-center
                      midfour:text-lg">
@@ -187,6 +198,24 @@ export default function SendEmail() {
       <button type="submit">Enviar</button>
                     </form>
                 </div>
+                ) : (
+                  <div className="flex flex-col mt-[190px] bg-gray-500 bg-opacity-55 rounded-xl w-[70%] majorfour:w-[85%]">
+                    {loading ? (
+                      <div className="flex flex-col items-center">
+                      <p className="text-white">Carregando...</p>
+                      <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+                    </div>
+                    ) : error ? (
+                      <p style={{ color: "red" }}>{error}</p>
+                    )
+                    : (
+                      <div className="h-[400px] flex flex-col items-center gap-3 justify-center text-center">
+                      <p className="text-2xl font-bold">E-mail enviado com sucesso!</p>
+                      <FaCheckCircle className="text-green-500 bg-white rounded-full text-6xl" />
+                      </div>
+                    )}
+                  </div>
+                )}
             </div>
             <Footer/>
         </div>
