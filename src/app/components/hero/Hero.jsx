@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 import ArtRLogo2 from "../../../../public/assets/img/art&reformalogo2.png"
 import Carousel from "../carousel/Carousel"
@@ -5,13 +6,25 @@ import "./Hero.css"
 import HeroImage1 from "../../../../public/assets/img/imagens home/Sonhar-com-reforma.jpg";
 import HeroImage2 from "../../../../public/assets/img/imagens home/acabamento.png";
 import HeroImage3 from "../../../../public/assets/img/imagens home/plantas-de-casas-em-projetos-de-arquitetura.jpg";
+import { gsap } from 'gsap';
+import { useLayoutEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Hero() {
+
+    useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger)
+
+        gsap.to(".hero-container", {
+            opacity: 1, duration: 4
+        })
+    })
+
     return(
-        <div className="hero-container flex flex-col items-center justify-center gap-0">
+        <div className="hero-container opacity-0 flex flex-col items-center justify-center gap-0">
             <div className="h-[200px] w-full flex flex-col mt-[100px] items-center justify-center">
             <Image src={ArtRLogo2} className="w-[250px]" alt="logo da empresa"/>
-            <hr className=" border-solid border-y-2 border-black w-full" />
+            <hr className="border-solid border-y-2 border-black w-full" />
             </div>
             <Carousel/>
             <div className="flex w-full flex-col items-center justify-center">

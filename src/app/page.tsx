@@ -11,7 +11,7 @@ import FormHome from "./components/formhome/FormHome"
 export default function Home() {
   return (
     <main className="">
-      <div className="hero">
+      <div className="hero overflow-x-hidden overflow-y-hidden">
       <Header/>
       <Hero/>
       <About/>
