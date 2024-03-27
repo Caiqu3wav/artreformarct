@@ -55,7 +55,7 @@ export default function SendEmail() {
             setLoading(true);
 
             try {
-                await axios.post('https://artreformarct.onrender.com', dadosFormulario);
+                await axios.post('https://artreformarct.onrender.com/api/sender', dadosFormulario);
                 setSucess(true);
                 console.log("E-mail enviado com sucesso");
             } catch (error) {
