@@ -5,7 +5,8 @@
   "main": "/sender/route.js",
   "scripts": {
     "test": "npm start",
-    "start": "node sender/route.js"
+    "start": "node sender/route.js",
+    "build": "echo 'No build step required'"
   },
   "author": "caique",
   "license": "ISC",
